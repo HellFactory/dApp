@@ -14,6 +14,5 @@ const defaultEthersState: Ethers = {
 export const ethersState = atom<Ethers>({
   key: "ethersState",
   default: defaultEthersState,
+  dangerouslyAllowMutability: true,
 });
-
-// export const
