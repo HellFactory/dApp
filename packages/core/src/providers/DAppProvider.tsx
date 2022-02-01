@@ -1,6 +1,25 @@
 import React from "react";
-import { RecoilRoot } from "recoil";
+import { RecoilRoot, useRecoilState } from "recoil";
+import { configState } from "../hooks";
+import { NetworkProvider } from "./NetworkProvider";
 
-export const DAppProvider: React.FC = ({ children }) => {
-  return <RecoilRoot>{children}</RecoilRoot>
+interface DAppProviderProps {
+  config?: Config;
 }
+
+export const DAppProvider: React.FC<DAppProviderProps> = ({
+  children,
+  config,
+}) => {
+  return (
+    <RecoilRoot
+      initializeState={({ set }) => {
+        if (config) {
+          set(configState, config);
+        }
+      }}
+    >
+      <NetworkProvider>{children}</NetworkProvider>
+    </RecoilRoot>
+  );
+};
