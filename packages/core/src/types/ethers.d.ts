@@ -1,13 +1,15 @@
 import { JsonRpcProvider } from "@ethersproject/providers";
 
 declare interface Ethers {
-  // activate: (provider: SupportedProviders) => Promise<void>
   // setError: (error: Error) => void
   deactivate: () => void;
+  isUnlocked: boolean;
+  isSupportNetwork: boolean;
+  activate: (provider?: JsonRpcProvider) => Promise<void>
   // connector: undefined
-  chainId?: ChainId;
+  chainId?: null | number;
   account?: null | string;
-  error?: Error;
+  error?: undefined | Error;
   library?: JsonRpcProvider;
   active: boolean;
   activateBrowserWallet: () => void;
