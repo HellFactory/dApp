@@ -1,4 +1,4 @@
-import { useConfig, useEther } from "core";
+import { useEther } from "core";
 
 export default function Web() {
   const {
@@ -9,11 +9,11 @@ export default function Web() {
     account,
     isUnlocked,
     isSupportNetwork,
+    isMetaMaskInstalled,
   } = useEther();
-  const { networks } = useConfig();
 
   const handleSwitchNetwork = async () => {
-    await switchNetwork(networks[0]);
+    await switchNetwork();
   };
 
   return (
@@ -27,7 +27,9 @@ export default function Web() {
         <p>Unlock wallet ? : {isUnlocked ? "yes" : "no"}</p>
         <p>Support chain ? : {isSupportNetwork ? "yes" : "no"}</p>
         <hr />
-        {isSupportNetwork ? (
+        {!isMetaMaskInstalled ? (
+          <button>MetaMask not Installed!</button>
+        ) : !isSupportNetwork ? (
           <button onClick={activateBrowserWallet}>Connect Wallet</button>
         ) : (
           <button onClick={handleSwitchNetwork}>Switch Network</button>
