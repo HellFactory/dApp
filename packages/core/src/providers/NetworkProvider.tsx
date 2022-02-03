@@ -39,7 +39,7 @@ export const NetworkProvider: React.FC = ({ children }) => {
       chainId: parsedChainId,
       library: provider,
       isSupportNetwork,
-      isMetaMaskInstalled: !!provider && !!provider.isMetaMask,
+      isMetaMaskInstalled: provider.isMetaMask,
       active: provider.isConnected(),
       activateBrowserWallet: async () => {
         await provider.request({ method: "eth_requestAccounts" });
@@ -79,7 +79,7 @@ export const NetworkProvider: React.FC = ({ children }) => {
       provider.on("accountsChanged", handleAccountsChanged);
       provider.on("connect", initialize);
       provider.on("disconnect", initialize);
-      setEthers({ ...ethers, isInitialized: true });
+      // setEthers({ ...ethers, isInitialized: true });
     });
   }, []);
 

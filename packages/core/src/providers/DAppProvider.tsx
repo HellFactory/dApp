@@ -1,7 +1,7 @@
 import React from "react";
 import { RecoilRoot } from "recoil";
 import { configState } from "../hooks/useConfig";
-import { Config } from "../types/config";
+import { Config } from '../types';
 import { NetworkProvider } from "./NetworkProvider";
 
 interface DAppProviderProps {
