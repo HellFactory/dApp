@@ -79,10 +79,5 @@ export const NetworkProvider: React.FC = ({ children }) => {
     });
   }, []);
 
-  useEffect(() => {
-    if (!ethers.library) return;
-    console.log(ethers);
-  }, [ethers]);
-
   return <>{children}</>;
 };
