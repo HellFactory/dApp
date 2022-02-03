@@ -1,2 +1,2 @@
-export * from "./useConfig";
-export * from "./useEthers";
+export { useConfig } from "./useConfig";
+export { useEther } from "./useEthers";

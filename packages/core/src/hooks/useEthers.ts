@@ -1,5 +1,5 @@
-import { atom, useRecoilValue } from 'recoil';
-import { Ethers } from '../types/ethers';
+import { atom, useRecoilValue } from "recoil";
+import { Ethers } from "../types/ethers";
 
 const defaultEthersState: Ethers = {
   account: null,
@@ -12,14 +12,15 @@ const defaultEthersState: Ethers = {
   activateBrowserWallet: () => undefined,
   activate: async () => undefined,
   deactivate: () => undefined,
+  switchNetwork: async () => undefined,
 };
 
 export const ethersState = atom<Ethers>({
-  key: 'ethersState',
+  key: "ethersState",
   default: defaultEthersState,
   dangerouslyAllowMutability: true,
 });
 
-export const useEther = ()=> {
+export const useEther = () => {
   return useRecoilValue(ethersState);
-}
+};
