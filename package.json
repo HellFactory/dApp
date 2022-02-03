@@ -16,6 +16,13 @@
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "endOfLine": "auto",
+    "jsxSingleQuote": true,
+    "tabWidth": 2
+  },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
