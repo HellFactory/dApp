@@ -1,19 +1,19 @@
-import { JsonRpcProvider } from "@ethersproject/providers";
+import { JsonRpcProvider } from '@ethersproject/providers'
 
-export {};
+export {}
 
 declare interface RequestArguments {
-  method: string;
-  params?: unknown[] | object;
+  method: string
+  params?: unknown[] | object
 }
 
 declare interface EthereumProvider extends JsonRpcProvider {
-  _metamask: any;
-  request: <T = unknown>(...args: RequestArguments) => Promise<T>;
+  _metamask: any
+  request: <T = unknown>(...args: RequestArguments) => Promise<T>
 }
 
 declare global {
   interface Window {
-    ethereum: EthereumProvider;
+    ethereum: EthereumProvider
   }
 }

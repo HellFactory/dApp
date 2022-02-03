@@ -1,4 +1,4 @@
-import { useBlockNumber, useEther, useSetBlockNumber } from 'core'
+import { useEther } from 'core'
 
 const WithSuspendEther = () => {
   const {
@@ -10,9 +10,8 @@ const WithSuspendEther = () => {
     activateBrowserWallet,
     isMetaMaskInstalled,
     switchNetwork,
-  } = useEther({ suspend: true })
-  const blockNumber = useBlockNumber()
-  const setBlockNumber = useSetBlockNumber()
+  } = useEther()
+
   const handleSwitchNetwork = async () => {
     await switchNetwork()
   }
@@ -30,20 +29,8 @@ const WithSuspendEther = () => {
       ) : (
         <button onClick={handleSwitchNetwork}>Switch Network</button>
       )}
-      <div style={{ margin: '10px 0' }}>
-        Block Number: {blockNumber.currentBlockNumber} <br />
-        <button
-          onClick={() => {
-            blockNumber.getBlockNumber().then((blockNumberText: any) => {
-              setBlockNumber((oldState) => ({
-                ...oldState,
-                currentBlockNumber: parseInt(blockNumberText, 16),
-              }))
-            })
-          }}
-        >
-          Update Block Number
-        </button>
+      <div>
+        Block Number: <pre>{JSON.stringify({}, null, 2)}</pre>
       </div>
     </div>
   )

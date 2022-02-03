@@ -1,5 +1,5 @@
-import type { Chain } from "./networks";
+import type { Chain } from './networks'
 
 export interface Config {
-  networks?: Chain[];
+  networks?: Chain[]
 }

@@ -12,8 +12,6 @@ importers:
 
   apps/docs:
     specifiers:
-      '@types/node': ^17.0.12
-      '@types/react': 17.0.37
       config: workspace:*
       eslint: 7.32.0
       next: 12.0.8
@@ -22,6 +20,8 @@ importers:
       react-dom: 17.0.2
       tsconfig: workspace:*
       typescript: ^4.5.3
+      '@types/node': ^17.0.12
+      '@types/react': 17.0.37
       ui: workspace:*
     dependencies:
       next: 12.0.8_react-dom@17.0.2+react@17.0.2
@@ -29,18 +29,16 @@ importers:
       react-dom: 17.0.2_react@17.0.2
       ui: link:../../packages/ui
     devDependencies:
-      '@types/node': 17.0.13
-      '@types/react': 17.0.37
       config: link:../../packages/config
       eslint: 7.32.0
       next-transpile-modules: 9.0.0
       tsconfig: link:../../packages/tsconfig
       typescript: 4.5.5
+      '@types/node': 17.0.13
+      '@types/react': 17.0.37
 
   apps/web:
     specifiers:
-      '@types/node': ^17.0.12
-      '@types/react': 17.0.37
       config: workspace:*
       core: workspace:*
       eslint: 7.32.0
@@ -51,6 +49,8 @@ importers:
       recoil: ^0.6.1
       tsconfig: workspace:*
       typescript: ^4.5.3
+      '@types/node': ^17.0.12
+      '@types/react': 17.0.37
       ui: workspace:*
     dependencies:
       core: link:../../packages/core
@@ -60,13 +60,13 @@ importers:
       recoil: 0.6.1_react-dom@17.0.2+react@17.0.2
       ui: link:../../packages/ui
     devDependencies:
-      '@types/node': 17.0.13
-      '@types/react': 17.0.37
       config: link:../../packages/config
       eslint: 7.32.0
       next-transpile-modules: 9.0.0
       tsconfig: link:../../packages/tsconfig
       typescript: 4.5.5
+      '@types/node': 17.0.13
+      '@types/react': 17.0.37
 
   packages/config:
     specifiers:
@@ -78,16 +78,16 @@ importers:
 
   packages/core:
     specifiers:
+      config: workspace:*
       '@ethersproject/providers': ^5.5.3
       '@harmony-react/onewallet-connector': ^1.0.2
       '@metamask/detect-provider': ^1.2.0
-      '@types/react': ^17.0.37
-      '@types/react-dom': ^17.0.11
-      config: workspace:*
       react: 17.0.2
       recoil: ^0.6.1
       tsconfig: workspace:*
       typescript: ^4.5.3
+      '@types/react': ^17.0.37
+      '@types/react-dom': ^17.0.11
     dependencies:
       '@ethersproject/providers': 5.5.3
       '@harmony-react/onewallet-connector': 1.0.2
@@ -95,28 +95,28 @@ importers:
       react: 17.0.2
       recoil: 0.6.1_react@17.0.2
     devDependencies:
-      '@types/react': 17.0.38
-      '@types/react-dom': 17.0.11
       config: link:../config
       tsconfig: link:../tsconfig
       typescript: 4.5.5
+      '@types/react': 17.0.38
+      '@types/react-dom': 17.0.11
 
   packages/tsconfig:
     specifiers: {}
 
   packages/ui:
     specifiers:
-      '@types/react': ^17.0.37
-      '@types/react-dom': ^17.0.11
       config: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.3
+      '@types/react': ^17.0.37
+      '@types/react-dom': ^17.0.11
     devDependencies:
-      '@types/react': 17.0.38
-      '@types/react-dom': 17.0.11
       config: link:../config
       tsconfig: link:../tsconfig
       typescript: 4.5.5
+      '@types/react': 17.0.38
+      '@types/react-dom': 17.0.11
 
 packages:
 
@@ -241,9 +241,9 @@ packages:
   /@ethersproject/bignumber/5.5.0:
     resolution: {integrity: sha512-6Xytlwvy6Rn3U3gKEc1vP7nR92frHkv6wtVr95LFR3jREXiCPzdWxKQ1cx4JGQBXxcguAwjA8murlYN2TSiEbg==}
     dependencies:
+      bn.js: 4.12.0
       '@ethersproject/bytes': 5.5.0
       '@ethersproject/logger': 5.5.0
-      bn.js: 4.12.0
     dev: false
 
   /@ethersproject/bytes/5.5.0:
@@ -297,6 +297,7 @@ packages:
   /@ethersproject/providers/5.5.3:
     resolution: {integrity: sha512-ZHXxXXXWHuwCQKrgdpIkbzMNJMvs+9YWemanwp1fA7XZEv7QlilseysPvQe0D7Q7DlkJX/w/bGA1MdgK2TbGvA==}
     dependencies:
+      bech32: 1.1.4
       '@ethersproject/abstract-provider': 5.5.1
       '@ethersproject/abstract-signer': 5.5.0
       '@ethersproject/address': 5.5.0
@@ -314,7 +315,6 @@ packages:
       '@ethersproject/strings': 5.5.0
       '@ethersproject/transactions': 5.5.0
       '@ethersproject/web': 5.5.1
-      bech32: 1.1.4
       ws: 7.4.6
     transitivePeerDependencies:
       - bufferutil
@@ -346,11 +346,11 @@ packages:
   /@ethersproject/signing-key/5.5.0:
     resolution: {integrity: sha512-5VmseH7qjtNmDdZBswavhotYbWB0bOwKIlOTSlX14rKn5c11QmJwGt4GHeo7NrL/Ycl7uo9AHvEqs5xZgFBTng==}
     dependencies:
+      bn.js: 4.12.0
+      elliptic: 6.5.4
       '@ethersproject/bytes': 5.5.0
       '@ethersproject/logger': 5.5.0
       '@ethersproject/properties': 5.5.0
-      bn.js: 4.12.0
-      elliptic: 6.5.4
       hash.js: 1.1.7
     dev: false
 
@@ -455,11 +455,11 @@ packages:
   /@harmony-js/crypto/0.1.56:
     resolution: {integrity: sha512-JMOWte8d3HXO2b038MqQpZ6al6OHsB9aZTretuzijxwrOIOdPKu9sDNHhmyJhQTIOKqG2+gErlj9AclZbXGk5g==}
     dependencies:
-      '@harmony-js/utils': 0.1.56
       aes-js: 3.1.2
       bip39: 2.6.0
       bn.js: 4.12.0
       elliptic: 6.5.4
+      '@harmony-js/utils': 0.1.56
       hdkey: 1.1.2
       hmac-drbg: 1.0.1
       js-sha3: 0.8.0
@@ -471,8 +471,8 @@ packages:
   /@harmony-js/network/0.1.56:
     resolution: {integrity: sha512-ItwgvQPjcFyVKKa1mFAqRMno6yyp1cjM2UNIdHOHtWG+H8BgObcw2ZM4LJpAPVF/XSoaTcZZwfB2hD7zOFnnYQ==}
     dependencies:
-      '@harmony-js/utils': 0.1.56
       cross-fetch: 3.1.5
+      '@harmony-js/utils': 0.1.56
       mitt: 1.2.0
       websocket: 1.0.34
     transitivePeerDependencies:
@@ -504,8 +504,8 @@ packages:
   /@harmony-js/utils/0.1.56:
     resolution: {integrity: sha512-XoYYIMoK/mSxPkxFd25dY/wScIWWevoTrHoFdlFd8N7GWlilfdgQEF5vO+4BA6hyDJ4ryfdLnGc6W6Hz+5qs2A==}
     dependencies:
-      '@types/bn.js': 4.11.6
       bn.js: 4.12.0
+      '@types/bn.js': 4.11.6
     dev: false
 
   /@harmony-react/abstract-connector/1.0.2:
@@ -513,9 +513,9 @@ packages:
     dependencies:
       '@harmony-js/core': 0.1.57
       '@harmony-react/types': 1.0.2
+      tiny-warning: 1.0.3
       '@web3-react/abstract-connector': 6.0.7
       '@web3-react/types': 6.0.7
-      tiny-warning: 1.0.3
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -525,8 +525,8 @@ packages:
     dependencies:
       '@harmony-js/core': 0.1.57
       '@harmony-react/abstract-connector': 1.0.2
-      '@web3-react/types': 6.0.7
       tiny-warning: 1.0.3
+      '@web3-react/types': 6.0.7
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -539,8 +539,8 @@ packages:
     resolution: {integrity: sha512-FagtKFz74XrTl7y6HCzQpwDfXP0yhxe9lHLD1UZxjvZIcbyRz8zTFF/yYNfSfzU414eDwZ1SrO0Qvtyf+wFMQg==}
     engines: {node: '>=10.10.0'}
     dependencies:
-      '@humanwhocodes/object-schema': 1.2.1
       debug: 4.3.3
+      '@humanwhocodes/object-schema': 1.2.1
       minimatch: 3.0.4
     transitivePeerDependencies:
       - supports-color
@@ -693,8 +693,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
     dependencies:
-      '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+      '@nodelib/fs.scandir': 2.1.5
     dev: false
 
   /@rushstack/eslint-patch/1.1.0:
@@ -727,17 +727,17 @@ packages:
   /@types/react/17.0.37:
     resolution: {integrity: sha512-2FS1oTqBGcH/s0E+CjrCCR9+JMpsu9b69RTFO+40ua43ZqP5MmQ4iUde/dMjWR909KxZwmOQIFq6AV6NjEG5xg==}
     dependencies:
+      csstype: 3.0.10
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
-      csstype: 3.0.10
     dev: true
 
   /@types/react/17.0.38:
     resolution: {integrity: sha512-SI92X1IA+FMnP3qM5m4QReluXzhcmovhZnLNm3pyeQlooi02qI7sLiepEYqT678uNiyc25XfCqxREFpy3W7YhQ==}
     dependencies:
+      csstype: 3.0.10
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
-      csstype: 3.0.10
     dev: true
 
   /@types/scheduler/0.16.2:
@@ -754,10 +754,10 @@ packages:
       typescript:
         optional: true
     dependencies:
+      debug: 4.3.3
       '@typescript-eslint/scope-manager': 5.10.2
       '@typescript-eslint/types': 5.10.2
       '@typescript-eslint/typescript-estree': 5.10.2
-      debug: 4.3.3
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -784,13 +784,13 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/types': 5.10.2
-      '@typescript-eslint/visitor-keys': 5.10.2
       debug: 4.3.3
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.3.5
       tsutils: 3.21.0
+      '@typescript-eslint/types': 5.10.2
+      '@typescript-eslint/visitor-keys': 5.10.2
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -799,8 +799,8 @@ packages:
     resolution: {integrity: sha512-zHIhYGGGrFJvvyfwHk5M08C5B5K4bewkm+rrvNTKk1/S15YHR+SA/QUF8ZWscXSfEaB8Nn2puZj+iHcoxVOD/Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/types': 5.10.2
       eslint-visitor-keys: 3.2.0
+      '@typescript-eslint/types': 5.10.2
     dev: false
 
   /@web3-react/abstract-connector/6.0.7:
@@ -1290,9 +1290,9 @@ packages:
       is-shared-array-buffer: 1.0.1
       is-string: 1.0.7
       is-weakref: 1.0.2
+      object.assign: 4.1.2
       object-inspect: 1.12.0
       object-keys: 1.1.1
-      object.assign: 4.1.2
       string.prototype.trimend: 1.0.4
       string.prototype.trimstart: 1.0.4
       unbox-primitive: 1.0.1
@@ -1355,15 +1355,15 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 12.0.9
-      '@rushstack/eslint-patch': 1.1.0
-      '@typescript-eslint/parser': 5.10.2
       eslint-import-resolver-node: 0.3.6
       eslint-import-resolver-typescript: 2.5.0_eslint-plugin-import@2.25.4
       eslint-plugin-import: 2.25.4
       eslint-plugin-jsx-a11y: 6.5.1
       eslint-plugin-react: 7.28.0
       eslint-plugin-react-hooks: 4.3.0
+      '@next/eslint-plugin-next': 12.0.9
+      '@rushstack/eslint-patch': 1.1.0
+      '@typescript-eslint/parser': 5.10.2
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1434,12 +1434,12 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
     dependencies:
-      '@babel/runtime': 7.16.7
       aria-query: 4.2.2
       array-includes: 3.1.4
       ast-types-flow: 0.0.7
       axe-core: 4.4.0
       axobject-query: 2.2.0
+      '@babel/runtime': 7.16.7
       damerau-levenshtein: 1.0.8
       emoji-regex: 9.2.2
       has: 1.0.3
@@ -1512,16 +1512,15 @@ packages:
     engines: {node: ^10.12.0 || >=12.0.0}
     hasBin: true
     dependencies:
-      '@babel/code-frame': 7.12.11
-      '@eslint/eslintrc': 0.4.3
-      '@humanwhocodes/config-array': 0.5.0
       ajv: 6.12.6
+      '@babel/code-frame': 7.12.11
       chalk: 4.1.2
       cross-spawn: 7.0.3
       debug: 4.3.3
       doctrine: 3.0.0
       enquirer: 2.3.6
       escape-string-regexp: 4.0.0
+      '@eslint/eslintrc': 0.4.3
       eslint-scope: 5.1.1
       eslint-utils: 2.1.0
       eslint-visitor-keys: 2.1.0
@@ -1531,14 +1530,15 @@ packages:
       fast-deep-equal: 3.1.3
       file-entry-cache: 6.0.1
       functional-red-black-tree: 1.0.1
-      glob-parent: 5.1.2
       globals: 13.12.0
+      glob-parent: 5.1.2
+      '@humanwhocodes/config-array': 0.5.0
       ignore: 4.0.6
       import-fresh: 3.3.0
       imurmurhash: 0.1.4
       is-glob: 4.0.3
-      js-yaml: 3.14.1
       json-stable-stringify-without-jsonify: 1.0.1
+      js-yaml: 3.14.1
       levn: 0.4.1
       lodash.merge: 4.6.2
       minimatch: 3.0.4
@@ -1619,11 +1619,11 @@ packages:
     resolution: {integrity: sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==}
     engines: {node: '>=8.6.0'}
     dependencies:
-      '@nodelib/fs.stat': 2.0.5
-      '@nodelib/fs.walk': 1.2.8
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.4
+      '@nodelib/fs.stat': 2.0.5
+      '@nodelib/fs.walk': 1.2.8
     dev: false
 
   /fast-json-stable-stringify/2.1.0:
@@ -1971,9 +1971,9 @@ packages:
     resolution: {integrity: sha512-mk0umAQ5lT+CaOJ+Qp01N6kz48sJG2kr2n1rX0koqKf6FIygQV0qLOdN9SCYID4IVeSigDOcPeGLozdMLYfb5g==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      '@types/node': 17.0.13
       merge-stream: 2.0.0
       supports-color: 8.1.1
+      '@types/node': 17.0.13
     dev: false
 
   /js-sha3/0.8.0:
@@ -2049,8 +2049,8 @@ packages:
     resolution: {integrity: sha1-K1aLJl7slExtnA3pw9u7ygNUzY4=}
     engines: {node: '>=4'}
     dependencies:
-      p-locate: 2.0.0
       path-exists: 3.0.0
+      p-locate: 2.0.0
     dev: false
 
   /lodash.merge/4.6.2:
@@ -2174,10 +2174,10 @@ packages:
       sass:
         optional: true
     dependencies:
-      '@next/env': 12.0.8
-      '@next/react-refresh-utils': 12.0.8_react-refresh@0.8.3
       caniuse-lite: 1.0.30001304
       jest-worker: 27.0.0-next.5
+      '@next/env': 12.0.8
+      '@next/react-refresh-utils': 12.0.8_react-refresh@0.8.3
       node-fetch: 2.6.1
       postcss: 8.2.15
       react: 17.0.2
@@ -2191,9 +2191,9 @@ packages:
       '@next/swc-android-arm64': 12.0.8
       '@next/swc-darwin-arm64': 12.0.8
       '@next/swc-darwin-x64': 12.0.8
-      '@next/swc-linux-arm-gnueabihf': 12.0.8
       '@next/swc-linux-arm64-gnu': 12.0.8
       '@next/swc-linux-arm64-musl': 12.0.8
+      '@next/swc-linux-arm-gnueabihf': 12.0.8
       '@next/swc-linux-x64-gnu': 12.0.8
       '@next/swc-linux-x64-musl': 12.0.8
       '@next/swc-win32-arm64-msvc': 12.0.8
@@ -2835,10 +2835,10 @@ packages:
   /tsconfig-paths/3.12.0:
     resolution: {integrity: sha512-e5adrnOYT6zqVnWqZu7i/BQ3BnhzvGbjEjejFXO20lKIKpwTaupkCPgEfv4GZK1IBciJUEhYs3J3p75FdaTFVg==}
     dependencies:
-      '@types/json5': 0.0.29
       json5: 1.0.1
       minimist: 1.2.5
       strip-bom: 3.0.0
+      '@types/json5': 0.0.29
     dev: false
 
   /tslib/1.14.1:
