@@ -2,7 +2,6 @@ import React from "react";
 import { RecoilRoot } from "recoil";
 import { configState } from "../hooks/useConfig";
 import { Config } from '../types';
-import { NetworkProvider } from "./NetworkProvider";
 
 interface DAppProviderProps {
   config?: Config;
@@ -20,7 +19,7 @@ export const DAppProvider: React.FC<DAppProviderProps> = ({
         }
       }}
     >
-      <NetworkProvider>{children}</NetworkProvider>
+      {children}
     </RecoilRoot>
   );
 };

@@ -1,6 +1,9 @@
 import { JsonRpcProvider } from "@ethersproject/providers";
 import { Chain } from "./networks";
 
+export interface EtherOptionInterface {
+  suspend?: boolean
+}
 export interface EthersState {
   error: null | Error;
   account: null | string;
