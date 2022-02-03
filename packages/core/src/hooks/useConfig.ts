@@ -7,7 +7,7 @@ import {
   Ropsten,
 } from "../constants/networks/ethereum";
 import { BSC, BSCTestnet } from "../constants/networks/bsc";
-import { Harmony } from "../constants/networks/harmony";
+import { Harmony, HarmonyTestnet } from "../constants/networks/harmony";
 import { Config } from "../types/config";
 
 export const configState = atom<Config>({
@@ -22,6 +22,7 @@ export const configState = atom<Config>({
       BSC,
       BSCTestnet,
       Harmony,
+      HarmonyTestnet,
     ],
   },
 });
